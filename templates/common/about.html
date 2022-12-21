@@ -1,0 +1,38 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block page_content %}
+
+
+
+
+<body>
+    <div class="wrapper1">
+
+        <div class="background-container">
+            <div class="bg-1"></div>
+            <div class="bg-2"></div>
+
+        </div>
+        <div class="about-container">
+
+            <div class="image-container">
+                <img src="{% static 'images/snow_driving.JPG'%}" alt="">
+
+            </div>
+
+            <div class="text-container">
+                <h1>About us</h1>
+                <p>Driving school "Fourteen" offers an exciting program that provides
+                                    quality driving instruction while accommodating most busy schedules.
+                                    We teach teens and adults the basics of defensive driving. Our driving instructors focus on individuals and identify their strengths and weaknesses. We guarantee to treat every individual with the most astounding appreciation even those paying little heed to driving learning or experience. Driving is not just a means of independent transport but also joy and freedom. Our Instructors have long periods of experience of road safety and strive to instruct in a manner that boosts automobile security and one’s joy of learning to drive.</p>
+
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+
+
+{% endblock %}

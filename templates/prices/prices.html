@@ -1,0 +1,30 @@
+{% extends 'base/base.html' %}
+{% block page_content %}
+
+
+    <section id="catalogPage">
+    {% if prices %}
+        <h1>Categories and Prices</h1>
+        {% for price in prices %}
+        <div class="card-box">
+            <div class="text-center">
+                <p class="name">{{ price.category_name }}</p>
+                <p class="price">{{ price.price|floatformat:2 }} leva</p>
+                <p class="description">{{ price.description_practice }}</p>
+                <p class="description">{{ price.description_theory }}</p>
+                <p class="description">{{ price.description_test }}</p>
+                <p class="description">{{ price.description_not_included }}</p>
+            </div>
+{#            <div class="btn-group">#}
+{#                <a href="{% url 'add prices' %}">Add price</a>#}
+{#            </div>#}
+
+        </div>
+        {% endfor %}
+
+    {% endif %}
+     <div class="btn-group">
+         <a href="{% url 'add prices' %}">Add price</a>
+     </div>
+    </section>
+{% endblock %}

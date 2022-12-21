@@ -1,0 +1,30 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block page_content %}
+
+<body>
+    <div class="content">
+        {% if not request.user.is_authenticated %}
+            <h1>Your driving license <br><span>is just</span> <br>a click away</h1>
+            <p class="par">
+                <br></p>
+
+                <button class="cn"><a href="{% url 'register user' %}">JOIN US</a></button>
+        {% endif %}
+    </div>
+</body>
+{#                <div class="form">#}
+{#                    <h2>Login Here</h2>#}
+{#                    <input type="email" name="email" placeholder="Enter Email Here">#}
+{#                    <input type="password" name="" placeholder="Enter Password Here">#}
+{#                    <button class="btnn"><a href="#">Login</a></button>#}
+{##}
+{#                    <p class="link">Don't have an account<br>#}
+{#                    <a href="#">Sign up </a> here</a>#}
+{#                    </p>#}
+{#                    <p class="liw">Log in with</p>#}
+{##}
+{#                </div>#}
+
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block page_content %}
+
+<div class="form">
+    <h2>Edit Profile</h2>
+    <form method="post" action="{% url 'edit user' pk=request.user.pk%}">
+        {{ form.as_p }}
+
+        <button class="btnn"><a href="{% url 'details user' pk=request.user.pk%}">Save changes</a></button>
+        {% csrf_token %}
+    </form>
+
+</div>
+
+
+{% endblock %}

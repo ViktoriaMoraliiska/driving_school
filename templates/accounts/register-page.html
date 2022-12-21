@@ -1,0 +1,24 @@
+{% extends 'base/base.html' %}
+{% load placeholders %}
+{% block page_content %}
+
+    <div class="form">
+        <h2>Register</h2>
+        <form method="post" action="{% url 'register user' %}">
+
+            <input type="hidden" name="next" value="{{ next }}">
+            {{ form.username|placeholder:'Username: ' }}
+            {{ form.email|placeholder:'Email: ' }}
+            {{ form.password1|placeholder:'Password: ' }}
+            {{ form.password2|placeholder:'Repeat password: ' }}
+            <button class="btnn">Register</button>
+
+            {% csrf_token %}
+        </form>
+
+    </div>
+    <div class="second-option">
+
+    </div>
+
+{% endblock %}

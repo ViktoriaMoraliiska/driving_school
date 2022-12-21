@@ -1,0 +1,17 @@
+{% extends 'base/base.html' %}
+{% block page_content %}
+
+    <div class="booking">
+        <div class="form-style-6">
+            <form method="post" action="{% url 'booking form' %}">
+            <h1>Contact Us</h1>
+
+                {{ form }}
+{#            <button class="submit"><a href="{% url 'prices' %}">Send</a></button>#}
+            {% csrf_token %}
+            <input type="submit" value="Send"/>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

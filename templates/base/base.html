@@ -1,0 +1,66 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Driving School</title>
+    <link rel="stylesheet" href={% static "css/style.css" %}>
+    <script src="{% static "css/js.js" %}" defer></script>
+</head>
+
+<body>
+
+    <div class="main">
+        <header>
+            <div class="navbar">
+                <div class="icon">
+                    <h2 class="logo">Driving School</h2>
+                </div>
+                <a href="#" class="toggle-button">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </a>
+                <div class="navbar-links">
+                    <ul>
+                        <li><a href="{% url 'index' %}">HOME</a></li>
+                        <li><a href="{% url 'about_us' %}">ABOUT</a></li>
+                        <li><a href="{% url 'prices' %}">PRICES</a></li>
+                        <li><a href="{% url 'videos' %}">VIDEOS</a></li>
+                        <li><a href="{% url 'booking form' %}">BOOKING</a></li>
+                        <li><a href="#">CONTACT</a></li>
+                        {% if not request.user.is_authenticated %}
+                            <li><a href="{% url 'register user' %}">REGISTER</a></li>
+                            <li><a href="{% url 'login user' %}">LOG IN</a></li>
+                        {% else %}
+                              <li><a href="{% url 'details user' pk=request.user.pk%}">PROFILE</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+
+{#<main>#}
+    {% block page_content %}
+    {% endblock %}
+{#</main>#}
+{#    <footer>#}
+{#        <div>#}
+{#            &copy;SoftUni Team 2022. All rights reserved.#}
+{#        </div>#}
+{#    </footer>#}
+    </div>
+
+{#    <footer>#}
+{#        <div>#}
+{#            &copy;Driving School "Fourteen" 2022. All rights reserved.#}
+{#        </div>#}
+{#    </footer>#}
+</body>
+
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+
+</html>
+

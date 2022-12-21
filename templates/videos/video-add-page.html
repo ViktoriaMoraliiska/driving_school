@@ -1,0 +1,14 @@
+{% extends 'base/base.html' %}
+{% block page_content %}
+
+    <div class="form-style-6">
+        <form method="POST" action="{% url 'video-create' pk=request.user.pk%}">
+
+            <h1>Upload a video</h1>
+                {{ form }}
+            <button class="btnn"><a href="{% url 'videos' %}">Upload</a></button>
+            {% csrf_token %}
+        </form>
+    </div>
+
+{% endblock %}
