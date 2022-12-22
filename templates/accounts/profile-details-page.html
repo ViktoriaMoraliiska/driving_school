@@ -16,9 +16,16 @@
                 </div>
 
                 <div class="profileText">
-
+                    {% if object.first_name %}
+                        <h1>First name: {{ object.first_name }}</h1>
+                    {% endif %}
+                    {% if object.last_name %}
+                        <h1>Last name: {{ object.last_name }}</h1>
+                    {% endif %}
                     <h1>Username: {{ object.username }}</h1>
-                    <h1>Email: {{ object.email }}</h1>
+                    {% if oject.email %}
+                        <h1>Email: {{ object.email }}</h1>
+                    {% endif %}
                 </div>
 
                 <div class="actionBtn">

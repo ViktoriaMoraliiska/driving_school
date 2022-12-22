@@ -32,7 +32,6 @@
                         <li><a href="{% url 'prices' %}">PRICES</a></li>
                         <li><a href="{% url 'videos' %}">VIDEOS</a></li>
                         <li><a href="{% url 'booking form' %}">BOOKING</a></li>
-                        <li><a href="#">CONTACT</a></li>
                         {% if not request.user.is_authenticated %}
                             <li><a href="{% url 'register user' %}">REGISTER</a></li>
                             <li><a href="{% url 'login user' %}">LOG IN</a></li>
@@ -46,29 +45,28 @@
 
        <!-- Page Content -->
 {#    <div class="container" id="app">#}
-        <div class="card" style="width: 40rem; margin: 20px; box-shadow: 12em;">
+        <div class="card" style="width: 40rem; margin: 20px; box-shadow: 12rem;">
         {% for item in videos %}
             <div class="card-box">
-                <img class="rounded-circle border-dark" src="{{ item.user.profile.image.url }}" style="border-color: red;" width="30" height="30">
-{#      not          <a class="mr-2" href="{% url 'stream:user-videos' item.user.username %}" style="text-align: start;">{{ item.user }}</a>#}
+{#                <img class="rounded-circle border-dark" src="{{ item.user.profile.image.url }}" style="border-color: red;" width="30" height="30">#}
+                <a class="mr-2" style="text-align: start;">{{ item.user.username }} posted:</a>
                 <h12 style="text-align: start;">{{ item.upload_date }}</h12>
 
                     {% video item.url '426x240'%}
 
                 <div class="card-body">
-{#   not               <h5 class="card-title"><a href="{% url 'stream:video-detail' item.id  %}">{{ item.title }}</a></h5>#}
+
                   <p class="card-text">{{item.description }}</p>
                 </div>
                 <hr>
-          </div>
+            </div>
         {% endfor %}
         </div>
-{#    </div>#}
-    <!-- /.container -->
+        {% if user.is_authenticated %}
+            <button class="btnn"><a href="{% url 'video-create' pk=request.user.pk%}">Add Video</a></button>
+        {% endif %}
+   </div>
 
-    <!-- Bootstrap core JavaScript -->
-{#    <script src="{% static 'js/jquery.min.js' %}"></script>#}
-{#    <script src="{% static 'js/bootstrap.min.js' %}"></script>#}
   </body>
 
 </html>

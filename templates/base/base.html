@@ -29,7 +29,6 @@
                         <li><a href="{% url 'prices' %}">PRICES</a></li>
                         <li><a href="{% url 'videos' %}">VIDEOS</a></li>
                         <li><a href="{% url 'booking form' %}">BOOKING</a></li>
-                        <li><a href="#">CONTACT</a></li>
                         {% if not request.user.is_authenticated %}
                             <li><a href="{% url 'register user' %}">REGISTER</a></li>
                             <li><a href="{% url 'login user' %}">LOG IN</a></li>

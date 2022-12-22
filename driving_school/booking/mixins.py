@@ -4,7 +4,7 @@ from enum import Enum
 class ChoicesEnumMixin:
     @classmethod
     def choices(cls):
-        return [(x.name, x.value) for x in cls]
+        return [(x.value, x.value) for x in cls]
 
 
 class WeekSchedule(ChoicesEnumMixin, Enum):
@@ -16,7 +16,7 @@ class WeekSchedule(ChoicesEnumMixin, Enum):
 
     @classmethod
     def choices(cls):
-        return [(x.name, x.value) for x in cls]
+        return [(x.value, x.value) for x in cls]
 
 
 class HourSchedule(ChoicesEnumMixin, Enum):
@@ -32,7 +32,7 @@ class HourSchedule(ChoicesEnumMixin, Enum):
 
     @classmethod
     def choices(cls):
-        return [(x.name, x.value) for x in cls]
+        return [(x.value, x.value) for x in cls]
 
 
 
